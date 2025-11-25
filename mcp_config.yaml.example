@@ -1,0 +1,44 @@
+# MCP Server Configuration
+# Configure MCP servers that the LiveKit agent can use as tools
+
+mcpServers:
+  # Example: Filesystem MCP Server
+  # Provides tools to read/write files in specified directories
+  filesystem:
+    command: npx
+    args:
+      - -y
+      - "@modelcontextprotocol/server-filesystem"
+      - /path/to/allowed/directory
+    env:
+      NODE_ENV: production
+
+  # Example: Brave Search MCP Server
+  # Provides web search capabilities
+  # brave-search:
+  #   command: npx
+  #   args:
+  #     - -y
+  #     - "@modelcontextprotocol/server-brave-search"
+  #   env:
+  #     BRAVE_API_KEY: your_brave_api_key_here
+
+  # Example: Custom Python MCP Server
+  # custom-server:
+  #   command: /path/to/python
+  #   args:
+  #     - /path/to/your/mcp_server.py
+  #     - --transport
+  #     - stdio
+  #   env:
+  #     PYTHONUNBUFFERED: "1"
+  #     CUSTOM_VAR: value
+
+# Add your MCP servers here following the same format:
+# server-name:
+#   command: path/to/executable or command
+#   args:
+#     - argument1
+#     - argument2
+#   env:  # Optional environment variables
+#     VAR_NAME: value
