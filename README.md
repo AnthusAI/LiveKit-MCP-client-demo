@@ -172,9 +172,16 @@ Start the local LiveKit server using Docker:
 docker-compose up
 ```
 
+**First time setup**: Docker will automatically download the LiveKit server image (~100MB) on the first run. This may take a few minutes depending on your connection speed.
+
 The server will start on:
 - WebRTC: `ws://localhost:7880`
 - HTTP: `http://localhost:7881`
+
+To run in the background (detached mode):
+```bash
+docker-compose up -d
+```
 
 ## Usage
 
